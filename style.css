@@ -1,0 +1,150 @@
+/*  Cores básicas */
+:root {
+    --primary: #1c39db; /* Azul  */
+    --secondary: #2c3e50; /* Branco */
+    --background: #e2f3f2;
+    --text: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+}
+
+/* Seções */
+section {
+    padding: 40px 0;
+}
+
+h2 {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Projetos (Flexbox) */
+.projeto-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.projeto-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Contatos e Tecnologias */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary);
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .projeto-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projeto-card {
+        width: 80%;
+    }
+}
+/* Estilos do Carrossel de Slides */
+.slides-projetos {
+    background-color: #f0f8ff;
+    padding: 40px 0;
+}
+
+.slide-container {
+    display: flex;
+    overflow-x: auto; /
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+}
+
+.slide {
+    min-width: 300px;
+    scroll-snap-align: start;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+/* Esconde a barra de rolagem (opcional) */
+.slide-container::-webkit-scrollbar {
+    display: none;
+}
